@@ -1,0 +1,66 @@
+﻿<div class="row" id="headerFront">
+    <div class="col-sm-4 col-md-3 col-lg-3">
+        <div style="height:2cm;width:3cm;">
+            <a href="~/index">
+                <img src="~/Imagen/doctadelivery_marron3.png" class="img-responsive" />
+            </a>
+        </div>
+        @Html.Partial("~/Views/Shared/Front/Ingresar/modalIngresar.cshtml")
+        @Html.Partial("~/Views/EditarProducto/ModalEditar.cshtml")
+    </div>
+    <div class="col-sm-4 col-md-5 col-lg-5"></div>
+    <div class="col-sm-4 col-md-4 col-lg-4" style="margin-top:20px;">
+        <ul class="nav nav-pills">
+            @if (!Request.IsAuthenticated)
+            {
+                <li role="presentation"><a href="~/registrar" role="button" class="btn btn-danger btn-sm">Registrarse</a></li>
+                <li role="presentation"><a href="#" role="button" class="btn btn-default btn-sm" id="ingresar1">Ingresar</a></li>
+            }
+            else
+            {
+                if (ViewBag.logear.Length>0)
+                {
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="~/Imagen/@ViewBag.logear[0].avatar" style="width:24px;height:24px;" />
+                            @ViewBag.logear[0].usuario1<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/perfil">Perfil</a></li>
+                            <li><a href="#">Pedidos</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Cerrar Sesion", "logout", "Registrar")</li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="~/Imagen/@ViewBag.logear2[0].avatar" style="width:24px;height:24px;" />
+                            @ViewBag.logear2[0].usuario1<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/perfilNegocio">Perfil</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Action("Index", "RegistrarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })">Publicacion</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Pedidos</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Cerrar Sesion", "logout", "Registrar")</li>
+                        </ul>
+                    </li>
+
+                }
+            }
+        </ul>
+
+
+
+
+
+
+
+    </div>
+</div>
+

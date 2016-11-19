@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DoctaDelivery.Models.Negocio
+@if (@TempData["ErrorNeg"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong><p>@Html.Raw(TempData["ErrorNeg"])</p>
+    </div>
+}
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-sm-6 col-md-6 col-lg-6 cuerpo">
+        <h2 class="text-center">Registra tu Negocio !</h2>
+        @using (Html.BeginForm("Registrar", "Negocio", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+
+            <div class="form-group" style="margin-top:1cm;">
+                <label for="nombre" class="control-label col-sm-3">Nombre del local:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", type = "text", placeholder = "Nombre", required = "required", maxlength = "30" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="calle_numero" class="control-label col-sm-3">Calle y Numero:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.calle_numero, new { @class = "form-control", type = "text", placeholder = "Calle y Numero", required = "required", maxlength = "50" })
+                    <p class="help-block">Ej : Rio Bamba 156</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuario" class="control-label col-sm-3">Usuario:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.usuario1, new { @class = "form-control", type = "text", required = "required", placeholder = "Usuario", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contrasenia" class="control-label col-sm-3">Constraseña:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.contrasenia, new { @class = "form-control", type = "password", required = "required", placeholder = "Constraseña", maxlength = "70" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tTipo = new List<SelectListItem>();
+                foreach (var tipo in ViewBag.tipos)
+                {
+                    tTipo.Add(new SelectListItem
+                    {
+                        Text = tipo.tipo,
+                        Value = tipo.id_tipo_negocio.ToString()
+                    });
+                }
+                }
+                <label for="id_tipo_negocio" class="control-label col-sm-3">Tipo de Negocio:* </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownListFor(x =>x.id_tipo_negocio, selectList: tTipo, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="horario_apertura" class="control-label col-sm-3">Horario Apertura:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.horario_apertura, new { @class = "form-control", type = "text", placeholder = "Horario Apertura", required = "required", maxlength = "5" })
+                    <p class="help-block">Ej : 11:00 </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="horario_cierre" class="control-label col-sm-3">Horario de Cierre:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.horario_cierre, new { @class = "form-control", type = "text", placeholder = "Horario de Cierre", required = "required", maxlength = "5" })
+                    <p class="help-block">Ej : 00:30 </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="control-label col-sm-3">Existe otra Sucursal Registrada ?:* </label>
+                <div class="col-sm-9">
+                    <select name="sucursal" class="form-control">
+                        <option value="1">Si</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tzona = new List<SelectListItem>();
+                foreach (var zona in ViewBag.zonas)
+                {
+                    tzona.Add(new SelectListItem
+                    {
+                        Text = zona.zona1,
+                        Value = zona.id_zona.ToString()
+                    });
+                }
+                }
+                <label for="Zona" class="control-label col-sm-3">Zona del Barrio:* </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownList("zona", selectList: tzona, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tbarrio = new List<SelectListItem>();
+                foreach (var barrio in ViewBag.barrios)
+                {
+                    tbarrio.Add(new SelectListItem
+                    {
+                        Text = barrio.nombre,
+                        Value = barrio.id_barrio.ToString()
+                    });
+                }
+                }
+                <label for="id_barrio" class="control-label col-sm-3">Barrio:* </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownListFor(x => x.id_barrio, selectList: tbarrio, htmlAttributes: new { @class = "form-control", })
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default">Registrar</button>
+            </div>
+            <br />
+        }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+</div>
+
+

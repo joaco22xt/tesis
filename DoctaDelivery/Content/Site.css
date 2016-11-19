@@ -1,0 +1,111 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#headerFront {
+background-color: rgba(255, 86, 46, 0.9);
+background: rgba(255, 86, 46, 0.9);
+color: rgba(255, 86, 46, 0.9);
+}
+
+#footerFront {
+    background-color: lightgray;
+    margin-top: 3cm;
+}
+
+.cuerpo {
+    margin-top:3cm; 
+    background-color:white; 
+    border:4px outset; 
+    border-radius:20px;
+}
+
+#body_pag {
+    background-image:url("../Imagen/14488919_10210790419980428_859587353_o.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#img_index {
+    margin-top:1.5cm;
+    background: rgba(249,224,190,1);
+    background: -moz-linear-gradient(left, rgba(249,224,190,1) 0%, rgba(255,184,159,0.59) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(249,224,190,1)), color-stop(100%, rgba(255,184,159,0.59)));
+    background: -webkit-linear-gradient(left, rgba(249,224,190,1) 0%, rgba(255,184,159,0.59) 100%);
+    background: -o-linear-gradient(left, rgba(249,224,190,1) 0%, rgba(255,184,159,0.59) 100%);
+    background: -ms-linear-gradient(left, rgba(249,224,190,1) 0%, rgba(255,184,159,0.59) 100%);
+    background: linear-gradient(to right, rgba(249,224,190,1) 0%, rgba(255,184,159,0.59) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e0be', endColorstr='#ffb89f', GradientType=1 );
+    border:4px outset; 
+    border-radius:20px;
+
+}
+.linea {
+    margin-top:1cm;
+    border-color:black;
+}
+
+.publi {
+    margin-top:10px; 
+    border:solid;
+    background-color: ButtonFace;
+    border:none;
+}
+

@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DoctaDelivery.Models.Usuario
+
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong><p>@Html.Raw(TempData["Error"])</p>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-sm-6 col-md-6 col-lg-6 cuerpo">
+        @using (Html.BeginForm("RegistrarUser","Registrar", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            string dia = "";
+
+           if (DateTime.Today.Day < 10)
+                {
+                    dia = "0" + DateTime.Today.Day;
+                }
+
+            <div class="form-group" style="margin-top:1cm;">
+                <label for="nombre" class="control-label col-sm-3">Nombre:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", type = "text", placeholder = "Nombre", required = "required", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="apellido" class="control-label col-sm-3">Apellido:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.apellido, new { @class = "form-control", type = "text", placeholder = "Apellido", required = "required", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="documento" class="control-label col-sm-3">Documento:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.documento, new { @class = "form-control", type = "text", placeholder = "Documento", required = "required", maxlength = "8" })
+                    <p class="help-block">Ej : 45123455 (sin puntos)</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_nac" class="control-label col-sm-3">Fecha Nacimiento:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.fecha_nac, new { @class = "form-control", type = "date", required = "required", max = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + dia, Value = DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + dia })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="e_mail" class="control-label col-sm-3">Email:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.e_mail, new { @class = "form-control", type = "email", placeholder = "Email", required = "required", maxlength = "79" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuario1" class="control-label col-sm-3">Usuario:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.usuario1, new { @class = "form-control", type = "text", placeholder = "usuario", required = "required", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="constrasenia" class="control-label col-sm-3">Contraseña:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.contrasenia, new { @class = "form-control", type = "password", placeholder = "Contraseña", required = "required", maxlength = "70" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="control-label col-sm-3">Telefono: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.telefono, new { @class = "form-control", type = "number", placeholder = "Telefono", required = "required" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tzona = new List<SelectListItem>();
+                  foreach (var zona in ViewBag.zonas)
+                  {
+                      tzona.Add(new SelectListItem
+                      {
+                          Text = zona.zona1,
+                          Value = zona.id_zona.ToString()
+                      });
+                  }
+                 }
+                <label for="Zona" class="control-label col-sm-3">Zona del Barrio:* </label>
+                <div class="col-sm-9" required>
+                   @Html.DropDownList("zona", selectList: tzona, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tbarrio = new List<SelectListItem>();
+                foreach (var barrio in ViewBag.barrios)
+                {
+                    tbarrio.Add(new SelectListItem
+                    {
+                        Text = barrio.nombre,
+                        Value = barrio.id_barrio.ToString()
+                    });
+                }
+                }
+                <label for="id_barrio" class="control-label col-sm-3">Barrio:* </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownListFor(x => x.id_barrio, selectList: tbarrio, htmlAttributes: new { @class = "form-control",})
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="calle_numero" class="control-label col-sm-3">Direccion:* </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.calle_numero, new { @class = "form-control", type = "text", placeholder = "Calle y numero", required = "required", maxlength = "80" })
+                    <p class="help-block">Ej : Rio Bamba 156</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default">Registrar</button>
+            </div>
+            <br />
+                }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+</div>
+
+@section scripts{
+    @RenderPage("~/Views/Shared/Front/Ingresar/Ingresar.cshtml")
+}

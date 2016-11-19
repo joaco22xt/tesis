@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DoctaDelivery.Models.Negocio
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-sm-6 col-md-6 col-lg-6 cuerpo">
+        @using (Html.BeginForm("EditarPerfilNeg", "PerfilNegocio", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            <br />
+            <div>
+                <img src="~/Imagen/@ViewBag.logear2[0].avatar" style="width:5cm;height:5cm;" />
+            </div>
+            <br />
+            <div class="from-group">
+                <label>Usuario : @ViewBag.logear2[0].usuario1</label>
+            </div>
+            <div class="form-group" hidden style="margin-top:1cm;" id="avatardivNegocio">
+                <label for="avatar" class="control-label col-sm-3">Cambiar Imagen</label>
+                <div class="col-sm-9">
+                    @Html.TextBox("avatar", "", new { @class = "form-control", type = "file" })
+                    <p class="help-block">Cambiar la foto de perfil</p>
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:1cm;">
+                <label for="nombre" class="control-label col-sm-3">Nombre: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", type = "text", required = "required", Value = ViewBag.logear2[0].nombre, disabled = "true", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:1cm;">
+                <label for="horario_apertura" class="control-label col-sm-3">Horario Apertura: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.horario_apertura, new { @class = "form-control", type = "text", required = "required", Value = ViewBag.logear2[0].horario_apertura, disabled = "true", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="horario_cierre" class="control-label col-sm-3">Horario Cierre: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.horario_cierre, new { @class = "form-control", type = "text", placeholder = "Documento", required = "required", Value = ViewBag.logear2[0].horario_cierre, disabled = "true", maxlength = "8" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="control-label col-sm-3">Telefono: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.telefono, new { @class = "form-control", type = "number", placeholder = "Telefono", required = "required", Value = ViewBag.logear2[0].telefono, disabled = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tzona = new List<SelectListItem>();
+                foreach (var zona in ViewBag.zonas)
+                {
+                    if (zona.zona1 == ViewBag.logear2[0].Barrio.Zona.zona1)
+                    {
+                        tzona.Add(new SelectListItem
+                        {
+                            Text = ViewBag.logear2[0].Barrio.Zona.zona1,
+                            Value = ViewBag.logear2[0].Barrio.Zona.id_zona.ToString(),
+                            Selected = true
+                        });
+                    }
+                    else
+                    {
+                        tzona.Add(new SelectListItem
+                        {
+                            Text = zona.zona1,
+                            Value = zona.id_zona.ToString()
+                        });
+                    }
+                }
+
+                }
+                <label for="Zona" class="control-label col-sm-3">Zona del Barrio: </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownList("zona", selectList: tzona, htmlAttributes: new { @class = "form-control", disabled = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tbarrio = new List<SelectListItem>();
+                foreach (var barrio in ViewBag.barrios)
+                {
+                    if (barrio.nombre == ViewBag.logear2[0].Barrio.nombre)
+                    {
+                        tbarrio.Add(new SelectListItem
+                        {
+                            Text = ViewBag.logear2[0].Barrio.nombre,
+                            Value = ViewBag.logear2[0].Barrio.id_barrio.ToString(),
+                            Selected = true
+                        });
+                    }
+                    else
+                    {
+                        tbarrio.Add(new SelectListItem
+                        {
+                            Text = barrio.nombre,
+                            Value = barrio.id_barrio.ToString()
+                        });
+                    }
+                }
+                }
+                <label for="id_barrio" class="control-label col-sm-3">Barrio: </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownListFor(x => x.id_barrio, selectList: tbarrio, htmlAttributes: new { @class = "form-control", disabled = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                @{List<SelectListItem> tTipo = new List<SelectListItem>();
+                foreach (var tipo in ViewBag.TipoNeg)
+                {
+                    if (tipo.tipo == ViewBag.logear2[0].Tipo_negocio.tipo)
+                    {
+                        tTipo.Add(new SelectListItem
+                        {
+                            Text = ViewBag.logear2[0].Tipo_negocio.tipo,
+                            Value = ViewBag.logear2[0].Tipo_negocio.id_tipo_negocio.ToString(),
+                            Selected = true
+                        });
+                    }
+                    else
+                    {
+                        tTipo.Add(new SelectListItem
+                        {
+                            Text = tipo.tipo,
+                            Value = tipo.id_tipo_negocio.ToString()
+                        });
+                    }
+                }
+                }
+                <label for="id_tipo_negocio" class="control-label col-sm-3">Tipo de Negocio: </label>
+                <div class="col-sm-9" required>
+                    @Html.DropDownListFor(x => x.id_tipo_negocio, selectList: tTipo, htmlAttributes: new { @class = "form-control", disabled = "true" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="calle_numero" class="control-label col-sm-3">Direccion: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(x => x.calle_numero, new { @class = "form-control", type = "text", placeholder = "Calle y numero", required = "required", Value = ViewBag.logear2[0].calle_numero, disabled = "true", maxlength = "80" })
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-default" id="btn_guardarNegocio" disabled>Guardar</button>
+                <button type="button" class="btn btn-default" id="btn_editarNegocio">Editar</button>
+                <span id="divbtnEditNegocio" hidden>
+                    <button type="button" class="btn btn-danger btn-xs" id="btn_cancelarNegocio">Cancelar</button>
+                </span>
+            </div>
+            <br />
+        }
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3"></div>
+</div>
+}
+
+@section scripts{
+    @RenderPage("~/Views/PerfilNegocio/EditarNegocio.cshtml")
+}

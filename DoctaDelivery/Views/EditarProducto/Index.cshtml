@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ int c = -1;}
+<div class="row">
+    <div class="col-sm-4 col-md-2 col-lg-2">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 cuerpo">
+                <h4 class="text-center">Menu</h4>
+                <hr />
+                <h6>Publicacion</h6>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "RegistrarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })"> cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "EditarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })">editar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href=""> ver</a>
+                    <hr />
+                    <h6>Producto</h6>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "RegistrarProducto", new { idNegocio = @ViewBag.logear2[0].id_negocio })">cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "EditarProducto", new {idNegocio=@ViewBag.logear2[0].id_negocio })">ver</a>
+                </div>
+                <hr />
+                <br />
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+        </div>
+    </div>
+    <div class="col-sm-7 col-md-9 col-lg-9 cuerpo">
+        <h2 class="text-center">Productos</h2>
+       <table class="table table-bordered" style="margin-top:1cm;">
+           <tr>
+               <th>Tipo Producto</th>
+               <th>Nombre</th>
+               <th>Descripcion</th>
+               <th>Precio</th>
+               <th>Tiempo</th>
+               <th>Coins</th>
+               <th>Accion</th>
+           </tr>
+ 
+           @foreach (var producto in ViewBag.productos)
+           {
+               c++;
+               <tr>
+                   <th hidden name="i@(c)">@producto.id_producto</th>
+                   <th name="t@(c)">@producto.Tipo_producto.nombre</th>
+                   <th name="n@(c)">@producto.nombre</th>
+                   <th name="d@(c)">@producto.descripcion</th>
+                   <th name="p@(c)">$@Convert.ToInt32(producto.precio)</th>
+                   <th name="ti@(c)">@producto.tiempo .min</th>
+                   <th name="c@(c)">@producto.coins</th>
+                   <th>
+                       <a role="button" class="btn btn-xs btn-primary" name="modifProd" id="@c">Modificar</a><a role="button" class="btn btn-xs btn-danger" style="margin-top:5px;" href="@Url.Action("Eliminar", "EditarProducto", new { id_negocio = @ViewBag.logear2[0].id_negocio,id_producto=@producto.id_producto })">Eliminar.</a></th>
+               </tr>
+           }
+       </table>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+
+@section scripts{
+    @RenderPage("~/Views/EditarProducto/EditarProd.cshtml")
+}

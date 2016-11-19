@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (@TempData["mensajeError"] != null)
+{
+
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong><p>@Html.Raw(TempData["mensajeError"])</p>
+    </div>
+}
+@if (@TempData["Logeado"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong><p>@Html.Raw(TempData["Logeado"])</p>
+    </div>
+}
+@if (@TempData["LogeadoNeg"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error</strong><p>@Html.Raw(TempData["LogeadoNeg"])</p>
+    </div>
+}
+<div class="row">
+    <div class="col-sm-3 col-md-1 col-lg-1"></div>
+    <div class="col-sm-6 col-md-10 col-lg-10">
+        <div class="row" id="img_index">
+            <form class="form-inline text-center">
+                <div class="form-group" style="margin-top:1cm; margin-left:1cm;">
+                    <h4><span class=" label label-default">Barrio :</span></h4>
+                    <select id="barrio" class="form-control">
+                        @foreach (var barrio in ViewBag.barrios)
+                        {
+                            <option value=@barrio.id_barrio>@barrio.nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top:1cm; margin-left:2cm;">
+                    <h4><span class=" label label-default">Tipo de Negocio:</span></h4>
+                    <select class="form-control">
+                        @foreach (var tipo in ViewBag.Tipos)
+                        {
+                            <option value=@tipo.id_tipo_negocio>@tipo.tipo</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top:2cm; margin-left:1.5cm;">
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                </div>
+                @if (!Request.IsAuthenticated)
+                {
+                    <div class="form-group" style="margin-top:1cm; margin-left:4cm;">
+                        <a href="~/Negocio">
+                            <img src="~/Imagen/buscador-mje-adheri.png" class="img-rounded" />
+                        </a>
+                    </div>
+                }
+                <br />
+                <br />
+                <br />
+                <br />
+            </form>
+        </div>
+        <div class="row cuerpo">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <h4>@ViewBag.Cantidades Negocios registrados en Córdoba</h4>
+                <div>
+                    <dl>
+                        <dt>Negocios</dt>
+                        @foreach (var negocio in @ViewBag.Negocios)
+                        {
+                            <dd><a>@negocio.nombre</a></dd>
+                        }
+                    </dl>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                @foreach (var publicacion in @ViewBag.publicaciones)
+                {
+                    <div class="row publi">
+                        <div class="col-sm-4 col-md-5 col-lg-5" style="width:3cm;height:3cm; margin-top:10px;">
+                            <img src="~/Imagen/@publicacion.Negocio.avatar" class="img-responsive" />
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-5">
+                            <p><h4>@publicacion.titulo</h4></p>
+                            <p>@publicacion.valoracion Puntuacion</p>
+                            <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>---@publicacion.Negocio.Barrio.nombre </p>
+                            <p><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>---@publicacion.Negocio.Tipo_negocio.tipo</p>
+                        </div>
+                        <div class="col-sm-6 col-md-2 col-lg-2">
+                            <a role="button" class="btn btn-primary btn-group-sm" href="@Url.Action("Index", "Publicacion", new {id_publicacion=@publicacion.id_publicacion })">Pedir</a>
+                        </div>
+                    </div>
+                    <br />
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-3 col-md-1 col-lg-2"></div>
+</div>
+
+
+
+@section scripts{
+    @RenderPage("~/Views/Shared/Front/Ingresar/Ingresar.cshtml")
+}

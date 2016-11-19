@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DoctaDelivery.Models.Publicacion
+@if (@TempData["Publicacion"] != null)
+{
+
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Mensaje</strong><p>@Html.Raw(TempData["Publicacion"])</p>
+    </div>
+}
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-lg-2">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 cuerpo">
+                <h4 class="text-center">Menu</h4>
+                <hr />
+                <h6>Publicacion</h6>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "RegistrarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })"> cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "EditarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })"> editar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href=""> ver</a>
+                    <hr />
+                    <h6>Producto</h6>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "RegistrarProducto", new { idNegocio = @ViewBag.logear2[0].id_negocio })">cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href=""> editar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="">ver</a>
+                </div>
+                <hr />
+                <br />
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-8 col-lg-8 cuerpo">
+    @using (Html.BeginForm("CrearPubli", "RegistrarPublicacion", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+            <div class="text-center">
+                <h1>Crear Publicacion</h1>
+            </div>
+            <div>
+                <input type="hidden" value="@ViewBag.logear2[0].id_negocio" name="id_negocio" />
+            </div>
+            <div class="form-group" style="margin-top:1cm;">
+                <label for="titulo" class="control-label col-sm-2">Titulo de la Publicacion: </label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(x => x.titulo, new { @class = "form-control", type = "text", placeholder = "Titulo", required = "required", maxlength = "50" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre" class="control-label col-sm-2">Imagenes: </label>
+                <div class="col-sm-10">
+                    @Html.TextBox("nombre", "", new { @class = "form-control", type = "file" })
+                    <p class="help-block">Imagenes de la Publicacion</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descripcion" class="control-label col-sm-2">Descripcion: </label>
+                <div class="col-sm-10">
+                    @Html.TextAreaFor(x => x.descripcion, new { @class = "form-control", placeholder = "Descripcion del Negocio", required = "required", maxlength = "900", rows = "8", cols = "20" })
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Crear Publicacion</button>
+            </div>
+    }
+        <br />
+        <br />
+        </div>
+            <div class="col-sm-3 col-md-2 col-lg-2"></div>
+        </div>

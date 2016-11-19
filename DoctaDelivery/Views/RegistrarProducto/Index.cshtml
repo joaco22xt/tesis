@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DoctaDelivery.Models.Producto
+@if (@TempData["Producto"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <br />
+        <br />
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Mensaje</strong><p>@Html.Raw(TempData["Producto"])</p>
+    </div>
+}
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-lg-2">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8 cuerpo">
+                <h4 class="text-center">Menu</h4>
+                <hr />
+                <h6>Publicacion</h6>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "RegistrarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })"> cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "EditarPublicacion", new { idNegocio = @ViewBag.logear2[0].id_negocio })"> editar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href=""> ver</a>
+                    <hr />
+                    <h6>Producto</h6>
+                </div>
+                <div style="margin-top:4px;">
+                        <a href="@Url.Action("Index", "RegistrarProducto", new { idNegocio = @ViewBag.logear2[0].id_negocio })">cargar</a>
+                </div>
+                <div style="margin-top:4px;">
+                    <a href="@Url.Action("Index", "EditarProducto", new {idNegocio=@ViewBag.logear2[0].id_negocio })">ver</a>
+                </div>
+                    <hr />
+                    <br />
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4"></div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-8 cuerpo">
+            @using (Html.BeginForm("CargarProducto", "RegistrarProducto", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div>
+                    <input type="hidden" value="@ViewBag.logear2[0].id_negocio" name="id_negocio" />
+                </div>
+                <div class="text-center">
+                    <h1>Cargar Productos</h1>
+                </div>
+                List<SelectListItem> tTipo = new List<SelectListItem>();
+                foreach (var tipo in ViewBag.TiposProductos)
+                {
+                    tTipo.Add(new SelectListItem
+                    {
+                        Text = tipo.nombre,
+                        Value = tipo.id_tipo_producto.ToString()
+                    });
+                }
+                <hr />
+                <div class="form-group" style="margin-top:1cm;">
+                    <label class="control-label col-sm-3">¿Que tipo de producto?:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(x => x.id_tipo_producto, selectList: tTipo, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Nombre:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", type = "text", placeholder = "Nombre", required = "required", maxlength = "25" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Descripcion:</label>
+                    <div class="col-sm-9">
+                        @Html.TextAreaFor(x => x.descripcion, new { @class = "form-control", rows = "4", cols = "6", placeholder = "Ingredientes", required = "required", maxlength = "400" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Precio:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(x => x.precio, new { @class = "form-control", type = "number", required = "required" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Tiempo Estimado:</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.tiempo, new { @class = "form-control", type = "number", required = "required" })
+                        <p class="help-block">En minutos</p>
+                    </div>
+                    <label>min.</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Coins:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(x => x.coins, new { @class = "form-control", type = "number", required = "required" })
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Cargar</button>
+                </div>
+            }
+        </div>
+        <div class="col-sm-3 col-md-2 col-lg-2"></div>
+</div>

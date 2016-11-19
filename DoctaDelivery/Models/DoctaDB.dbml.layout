@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 17" name="DoctaDB">
+  <DataContextMoniker Name="/DoctaDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c4d92acb-1bce-4695-b96b-fae8e56bfaec" absoluteBounds="3.5, 9.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DoctaDBDataContext/Barrio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7f85bab-0949-4df2-98a6-bd959914301a" absoluteBounds="3.515, 9.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9c2ce63-f092-426b-9465-6ed1fd0a9f81" absoluteBounds="0.75, 9.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DoctaDBDataContext/Zona" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fc277ec-8520-44a7-b509-4d2e0648ec72" absoluteBounds="0.765, 9.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d21a230d-5b26-4d1c-b29c-ac696a4788fb" absoluteBounds="11.75, 9.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DoctaDBDataContext/Comentario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d049eca8-59e1-456b-95c7-ba94244d4bfe" absoluteBounds="11.765, 9.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6725007a-4431-43f6-807d-e7926befff79" absoluteBounds="9, 12.25, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DoctaDBDataContext/delivery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7a3c436-4b67-4c0f-b8db-6d4373a4e63e" absoluteBounds="9.015, 12.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cacf5bf-eec6-459d-92ce-fbcc1f68782b" absoluteBounds="12, 15, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/DoctaDBDataContext/Estado_pedido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d801fce2-37e4-4834-b3c0-ef8cc10378a0" absoluteBounds="12.015, 15.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7498145-d994-4a9b-a63c-d12b4150f649" absoluteBounds="11.75, 12.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DoctaDBDataContext/Foto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef73a1c6-246e-4114-aafe-aa036076f7fb" absoluteBounds="11.765, 12.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77efba4f-2d51-4085-a838-352ccd1d12a5" absoluteBounds="6.25, 8.375, 2, 3.1170068359374987">
+      <DataClassMoniker Name="/DoctaDBDataContext/Negocio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e87c43eb-0164-4e14-a746-f0c2d613be66" absoluteBounds="6.265, 8.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dbabe5b-4e46-4ca3-b0cb-8c3a59a2cb73" absoluteBounds="9, 7.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DoctaDBDataContext/Negocio_Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="daa4d69a-d48d-4848-b0ad-a33baded2a52" absoluteBounds="9.015, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49838ed6-eb4f-48d4-89a7-597fbaeee859" absoluteBounds="14.75, 11.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DoctaDBDataContext/Pedido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="117a8fb1-49e4-4836-a912-4a0e490c62e2" absoluteBounds="14.765, 11.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75a422c2-3165-47aa-8821-5335fb584a4f" absoluteBounds="12, 5.625, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/DoctaDBDataContext/Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d7f012e-c575-4dab-8229-2ba3079b7d74" absoluteBounds="12.015, 6.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e661fd11-5b8b-4bff-b0b3-44f11705cd6e" absoluteBounds="9, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DoctaDBDataContext/Publicacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15ec0f5e-ca52-4b5f-b138-99ded4248508" absoluteBounds="9.015, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70f281eb-b08e-45af-80f6-e4807c40c6c1" absoluteBounds="3.5, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DoctaDBDataContext/Tipo_negocio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55814a16-b578-4ae9-a57b-439e984c1293" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2279d77-a3df-466f-9a61-b670c01a5d88" absoluteBounds="9.25, 4.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DoctaDBDataContext/Tipo_producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7809af7-84d8-4a61-86aa-245b24cc4f4d" absoluteBounds="9.265, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="501ae64f-fece-4951-a10c-98d0bb73bc57" absoluteBounds="6.25, 13.5, 2, 3.3093082682291648">
+      <DataClassMoniker Name="/DoctaDBDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0fcdea0-0526-4c92-9268-a8f926d0754c" absoluteBounds="6.265, 13.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 9.84699625651042); (3.5 : 9.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Zona/Zona_Barrio" />
+      <nodes>
+        <classShapeMoniker Id="a9c2ce63-f092-426b-9465-6ed1fd0a9f81" />
+        <classShapeMoniker Id="c4d92acb-1bce-4695-b96b-fae8e56bfaec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 11.4920068359375); (8.625 : 11.8670068359375); (8.625 : 13.2315991210937); (9 : 13.2315991210937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Negocio/Negocio_delivery" />
+      <nodes>
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+        <classShapeMoniker Id="6725007a-4431-43f6-807d-e7926befff79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.94314697265625); (6.25 : 9.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Barrio/Barrio_Negocio" />
+      <nodes>
+        <classShapeMoniker Id="c4d92acb-1bce-4695-b96b-fae8e56bfaec" />
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 8.375); (7.25 : 7.8124995); (9 : 7.8124995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Negocio/Negocio_Negocio_Producto" />
+      <nodes>
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+        <classShapeMoniker Id="6dbabe5b-4e46-4ca3-b0cb-8c3a59a2cb73" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 14.0521468098958); (11.4166666666667 : 14.0521468098958 : JumpStart); (11.5833333333333 : 14.0521468098958 : JumpEnd); (13.8229166666667 : 14.0521468098958 : JumpStart); (13.9895833333333 : 14.0521468098958 : JumpEnd); (15.1354141666667 : 14.0521468098958 : JumpStart); (15.3020808333333 : 14.0521468098958 : JumpEnd); (15.75 : 14.0521468098958); (15.75 : 13.7228011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/delivery/delivery_Pedido" />
+      <nodes>
+        <classShapeMoniker Id="6725007a-4431-43f6-807d-e7926befff79" />
+        <classShapeMoniker Id="49838ed6-eb4f-48d4-89a7-597fbaeee859" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.90625 : 15); (13.90625 : 11.78125); (14.75 : 11.78125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Estado_pedido/Estado_pedido_Pedido" />
+      <nodes>
+        <classShapeMoniker Id="1cacf5bf-eec6-459d-92ce-fbcc1f68782b" />
+        <classShapeMoniker Id="49838ed6-eb4f-48d4-89a7-597fbaeee859" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 9.06814697265625); (15.75 : 9.06814697265625); (15.75 : 11.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Negocio/Negocio_Pedido" />
+      <nodes>
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+        <classShapeMoniker Id="49838ed6-eb4f-48d4-89a7-597fbaeee859" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12 : 7.70755126953125); (11 : 7.70755126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Producto/Producto_Negocio_Producto" />
+      <nodes>
+        <classShapeMoniker Id="75a422c2-3165-47aa-8821-5335fb584a4f" />
+        <classShapeMoniker Id="6dbabe5b-4e46-4ca3-b0cb-8c3a59a2cb73" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.85221795898437); (13.90625 : 8.85221795898437); (13.90625 : 8.1651025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Negocio/Negocio_Producto" />
+      <nodes>
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+        <classShapeMoniker Id="75a422c2-3165-47aa-8821-5335fb584a4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 10.4142976888021); (11.75 : 10.4142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Publicacion/Publicacion_Comentario" />
+      <nodes>
+        <classShapeMoniker Id="e661fd11-5b8b-4bff-b0b3-44f11705cd6e" />
+        <classShapeMoniker Id="d21a230d-5b26-4d1c-b29c-ac696a4788fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 11.5208968098958); (11.375 : 11.8958968098958); (11.375 : 13.0392976888021); (11.4166666666667 : 13.0392976888021 : JumpStart); (11.5833333333333 : 13.0392976888021 : JumpEnd); (11.75 : 13.0392976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Publicacion/Publicacion_Foto" />
+      <nodes>
+        <classShapeMoniker Id="e661fd11-5b8b-4bff-b0b3-44f11705cd6e" />
+        <classShapeMoniker Id="b7498145-d994-4a9b-a63c-d12b4150f649" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.5897509179688); (9 : 10.5897509179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Negocio/Negocio_Publicacion" />
+      <nodes>
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+        <classShapeMoniker Id="e661fd11-5b8b-4bff-b0b3-44f11705cd6e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.84699625651042); (6.7187475 : 6.84699625651042); (6.7187475 : 8.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Tipo_negocio/Tipo_negocio_Negocio" />
+      <nodes>
+        <classShapeMoniker Id="70f281eb-b08e-45af-80f6-e4807c40c6c1" />
+        <classShapeMoniker Id="77efba4f-2d51-4085-a838-352ccd1d12a5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 4.84699625651042); (13 : 4.84699625651042); (13 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Tipo_producto/Tipo_producto_Producto" />
+      <nodes>
+        <classShapeMoniker Id="e2279d77-a3df-466f-9a61-b670c01a5d88" />
+        <classShapeMoniker Id="75a422c2-3165-47aa-8821-5335fb584a4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 15.5425027552083); (11.5 : 15.5425027552083); (11.5 : 11.4535953776042); (12.75 : 11.4535953776042); (12.75 : 11.0785953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Usuario/Usuario_Comentario" />
+      <nodes>
+        <classShapeMoniker Id="501ae64f-fece-4951-a10c-98d0bb73bc57" />
+        <classShapeMoniker Id="d21a230d-5b26-4d1c-b29c-ac696a4788fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 14.6065991210937); (11.4166666666667 : 14.6065991210937 : JumpStart); (11.5833333333333 : 14.6065991210937 : JumpEnd); (13.8229166666667 : 14.6065991210937 : JumpStart); (13.9895833333333 : 14.6065991210937 : JumpEnd); (15.2187475 : 14.6065991210937); (15.2187475 : 13.7228011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Usuario/Usuario_Pedido" />
+      <nodes>
+        <classShapeMoniker Id="501ae64f-fece-4951-a10c-98d0bb73bc57" />
+        <classShapeMoniker Id="49838ed6-eb4f-48d4-89a7-597fbaeee859" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 10.6362939453125); (4.5 : 15.1546541341146); (6.25 : 15.1546541341146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DoctaDBDataContext/Barrio/Barrio_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="c4d92acb-1bce-4695-b96b-fae8e56bfaec" />
+        <classShapeMoniker Id="501ae64f-fece-4951-a10c-98d0bb73bc57" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

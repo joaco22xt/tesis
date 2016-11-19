@@ -1,0 +1,96 @@
+﻿@model DoctaDelivery.Models.Producto
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalProd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Editar</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Editar", "EditarProducto", FormMethod.Post))
+                {
+                    if (Request.IsAuthenticated)
+                    {
+                        <div>
+                            <input type="hidden" value="@ViewBag.logear2[0].id_negocio " name="id_negocio" />
+                        </div>
+
+                    }
+                    <div>
+                        <input type="hidden"  name="id_producto" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Producto:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="select" name="tipo">
+                                <option value="1">Lomito</option>
+                                <option value="2">Empanada</option>
+                                <option value="3">Pizza</option>
+                                <option value="4">Hamburguesa</option>
+                                <option value="5">Pollo</option>
+                                <option value="6">Tarta</option>
+                                <option value="7">Menu Diario</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Nombre:</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(x => x.nombre, new { @class = "form-control", type = "text", placeholder = "Nombre", required = "required", maxlength = "25"})
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Descripcion:</label>
+                        <div class="col-sm-9">
+                            @Html.TextAreaFor(x => x.descripcion, new { @class = "form-control", rows = "4", cols = "6", placeholder = "Ingredientes", required = "required", maxlength = "400" })
+                        </div>  
+                    </div>                  
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Precio:</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(x => x.precio, new { @class = "form-control", type = "number", required = "required" })
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Tiempo Estimado:</label>
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(x => x.tiempo, new { @class = "form-control", type = "number", required = "required" })
+                            <p class="help-block">En minutos</p>
+                        </div>
+                        <label>min.</label>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Coins:</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(x => x.coins, new { @class = "form-control", type = "number", required = "required" })
+                        </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                }
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
